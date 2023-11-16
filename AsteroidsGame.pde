@@ -1,4 +1,6 @@
 Star[] nightSky = new Star[600];
+Spaceship bob = new Spaceship();
+boolean turnLeft, turnRight, moveForward, moveBackward;
 public void setup(){
   size(500,500);
   for (int i = 0; i < nightSky.length; i++){
