@@ -3,7 +3,7 @@ class Spaceship extends Floater{
 	myCenterX = myCenterY = 400;
 	myDirectionX = myDirectionY = 0;
 	myPointDirection = -90;
-	myColor = color(0,0,255);	
+	myColor = color(255,0,0);	
 	corners = 23;
 	xCorners = new int[corners];
 	yCorners = new int[corners];
