@@ -37,3 +37,11 @@ public void keyPressed(){
     bob.accelerate(-0.5);
   }
 }
+for(int i = 0; i < asteroids.size(); i++) {
+  asteroids.get(i).show();
+  asteroids.get(i).move();
+  if(dist((float)spaceship.getX(), (float)spaceship.getY(), (float)asteroids.get(i).getX(), (float)asteroids.get(i).getY()) <= 30){
+      spaceship.lowerVar();
+      asteroids.remove(asteroids.get(i)); 
+      }
+    } 
