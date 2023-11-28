@@ -1,13 +1,21 @@
-Spaceship bob = new Spaceship();
+Spaceship bob = new Spaceship();\
+ArrayList <Asteroid> asteroids;
 Star[] bar;
 public void setup() 
 {
   size(500,500);
+  setAsteroids();
   bob.myCenterX = width/2;
   bob.myCenterY = height/2;
   bar = new Star[400];
   for (int i = 0; i<bar.length;i++){
     bar[i] = new Star();
+  }
+}
+public void setAsteroids() {  
+  asteroids = new ArrayList <Asteroid> (0);
+  for(int i = 0; i < 20; i++) {
+    asteroids.add(new Asteroid());
   }
 }
 public void draw() 
