@@ -23,6 +23,8 @@ class Asteroid extends Floater {
     else if (myCenterY < 0) myCenterY = height;  
     myPointDirection += turnSpeed;
   }   
+  
   public double getX() { return myCenterX; }
+  
   public double getY() { return myCenterY; }
 }
