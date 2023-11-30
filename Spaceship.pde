@@ -1,9 +1,6 @@
-class Spaceship extends Floater {   
-  protected boolean flicker;
-  protected int myOpacity, var, lives;
-
-  Spaceship() {
-    	myCenterX = myCenterY = 400;
+class Spaceship extends Floater  {   
+     public Spaceship() {
+      	myCenterX = myCenterY = 400;
 	myDirectionX = myDirectionY = 0;
 	myPointDirection = -90;
 	myColor = color(255,0,0);	
@@ -56,62 +53,31 @@ class Spaceship extends Floater {
 	yCorners[21] = -6*2;
 	xCorners[22] = 2*2;
 	yCorners[22] = -6*2;
-  }
+   }
+   
 
-  public void slowSpeed() {
-    if (myXspeed >= 0.01) myXspeed *= 0.9;
-    else if (myXspeed <= 0.01) myXspeed *= 0.9;
-    if (myYspeed > 0.01) myYspeed *= 0.9;
-    else if (myYspeed < 0.01) myYspeed *= 0.9;
-  }
-
-  public int getOpacity() { return myOpacity; }
-
-  public void lowerOpacity() {
-    myOpacity -= 15;
-    myColor = color(255, 255, 255, myOpacity);
-  }
-
-  public void raiseOpacity() {
-    myOpacity += 15;
-    myColor = color(255, 255, 255, myOpacity);
-  }
-
-  public void hyperspace() {
-    myCenterX = Math.random() * 1000;
-    myCenterY = Math.random() * 600;
-  }
-
-  public void showBlast() {
-    if (flicker == true) flicker = false;
-    else {
-      noStroke();
-      fill(0, 255, 255);
-      translate((float)myCenterX, (float)myCenterY);
-      float dRadians = (float)(myPointDirection*(Math.PI / 180)); 
-      rotate(dRadians + (float)Math.PI / 2.5); //rotate
-      rect(0, 15, 1, 10 + (float)(Math.random() * 7) - 5); //down (starting pos)
-      rotate((float)Math.PI / 5.0); //rotate
-      rect(0, 15, 1, 10 + (float)(Math.random() * 7) - 5); //up (starting pos)
-      rotate((float)Math.PI / -10.0); //rotate
-      rect(0, 15, 1, 10 + (float)(Math.random() * 7) - 5); //middle
-
-      flicker = true;
-    }
+   public void hyperspace() {
+     myXspeed = myYspeed = 0;
+     myPointDirection = Math.random()*500;
+     myCenterX = Math.random()*500;
+     myCenterY = Math.random()*500;
+   }
+   
+   public double getCenterX() {
+     return myCenterX;
   }
   
-  public double getX() { return myCenterX; }
+   public double getCenterY() {
+    return myCenterY;
+  }
+  public double getXspeed() {
+    return myXspeed;
+  }
   
-  public double getY() { return myCenterY; }
-
-  public void updateColor() { myColor = color(255, var, var); }
-
-  public void lowerVar() { var -= 50; }
-
-  public int getLives() { 
-    lives = 0;
-    for(int i = var; i >= 150; i -= 50) {
-      lives++;
-    } return lives;
+  public double getYspeed() {
+    return myYspeed; 
+  }
+  public double getPointDirection() {
+    return myPointDirection; 
   }
 }
