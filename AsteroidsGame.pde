@@ -1,11 +1,10 @@
 Spaceship neil;
 Star [] stars = new Star[200];
 ArrayList <Asteroid> armstrong;
-ArrayList <Bullet> pew;
 public void setup() 
 {
   size(500,500);
-  background(0);
+  background(245,99,41);
   neil = new Spaceship();
   armstrong = new ArrayList <Asteroid>();
   pew = new ArrayList <Bullet>();
@@ -27,8 +26,6 @@ public void keyPressed() {
     neil.accelerate(-0.5);
   if(key == 'd') 
     neil.turn(7);
-  if(key == 'j')
-    pew.add(new Bullet(neil));
 } 
 public void draw() {
   background(0);
