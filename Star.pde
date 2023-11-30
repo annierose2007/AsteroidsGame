@@ -1,26 +1,16 @@
-class Star {
-  protected float myX, myY, mySize;
-  protected color myColor;
-  
-  Star() {
-    myX = (float)(Math.random() * width);
-    myY = (float)(Math.random() * height);
-    mySize = (float)(Math.random() * 7);
-    myColor = color(255);
+class Star
+{
+  private int myX, myY, mySize1, mySize2;
+  public Star() {
+    myX = (int)(Math.random()*499);
+    myY = (int)(Math.random()*499);
+    mySize1 = (int)(Math.random()*5);
+    mySize2 = (int)(Math.random()*5);
   }
   
   public void show() {
     noStroke();
-    fill(myColor);
-    ellipse(myX, myY, mySize, mySize);
-  }
-}
-
-class BlueStar extends Star {
-  BlueStar() {
-    myX = (float)(Math.random() * 1600);
-    myY = (float)(Math.random() * 800);
-    mySize = (float)(Math.random() * 7);
-    myColor = color(0, 255, 255);
+    fill(255);
+    ellipse(myX,myY,mySize1,mySize2);
   }
 }
