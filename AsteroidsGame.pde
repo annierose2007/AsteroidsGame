@@ -27,7 +27,7 @@ public void keyPressed() {
     neil.turn(7);
 } 
 public void draw() {
-  background(0);
+  background(245,98,40);
   for(int i=0; i<stars.length; i++) {
     stars[i].show();
   }
@@ -36,22 +36,5 @@ public void draw() {
   for(int i = 0; i < armstrong.size(); i++){
     armstrong.get(i).move();
     armstrong.get(i).show();
-    double distance = dist((float)neil.getCenterX(), (float)neil.getCenterY(), (float)armstrong.get(i).getCenterX(), (float)armstrong.get(i).getCenterY());
-    if(distance<23) {
-      armstrong.remove(i);
     }
-      for(int j = 0; j < pew.size(); j++) {
-       double distance2 = dist((float)pew.get(j).getCenterX(), (float)pew.get(j).getCenterY(), (float)armstrong.get(i).getCenterX(), (float)armstrong.get(i).getCenterY());
-       if(distance2<20) {
-         armstrong.remove(i);
-         pew.remove(j);
-         break;
-       }
-     }
    }
-  for(int i = 0; i < pew.size(); i++) {
-    pew.get(i).move();
-    pew.get(i).show();
-  }
-  
-}
