@@ -53,9 +53,8 @@ class Spaceship extends Floater  {
 	yCorners[21] = -6*2;
 	xCorners[22] = 2*2;
 	yCorners[22] = -6*2;
-   }
-   
-
+   }   
+}
    public void hyperspace() {
      myXspeed = myYspeed = 0;
      myPointDirection = Math.random()*500;
@@ -66,18 +65,15 @@ class Spaceship extends Floater  {
    public double getCenterX() {
      return myCenterX;
   }
-  
    public double getCenterY() {
     return myCenterY;
   }
   public double getXspeed() {
     return myXspeed;
   }
-  
   public double getYspeed() {
     return myYspeed; 
   }
   public double getPointDirection() {
     return myPointDirection; 
   }
-}
