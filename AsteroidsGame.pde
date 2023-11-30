@@ -4,7 +4,7 @@ ArrayList <Asteroid> armstrong;
 public void setup() 
 {
   size(500,500);
-  background(245,99,41);
+  background(245,98,40);
   neil = new Spaceship();
   armstrong = new ArrayList <Asteroid>();
   pew = new ArrayList <Bullet>();
