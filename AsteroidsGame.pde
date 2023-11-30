@@ -7,7 +7,6 @@ public void setup()
   background(245,98,40);
   neil = new Spaceship();
   armstrong = new ArrayList <Asteroid>();
-  pew = new ArrayList <Bullet>();
   for(int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
   }
