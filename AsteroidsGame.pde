@@ -25,61 +25,21 @@ public void draw(){
     armstrong.get(i).show();
     }
   }
-  if(turnRight == true){
-    bob.turn(5);
-  } 
-  else {
-    bob.turn(0);
-  }
-  if(turnLeft == true){
-    bob.turn(-5);
-  } 
-  else {
-    bob.turn(0);
-  }
-  if(moveForward == true){
-    bob.accelerate(0.1);
-  } 
-  else {
-    bob.accelerate(0);
-  }
-  if(moveBackward == true){
-    bob.accelerate(-0.1);
-  } 
-  else {
-    bob.accelerate(0);
-  }
-}
-
+ 
 public void keyPressed(){
      if(key == 'h'){
        bob.hyperspace();
      }
      if(key == 'd'){
-       turnRight = true;
+       bob.turn(20);
      }
      if(key == 'a'){
-       turnLeft = true;
+       bob.turn(-20);
      }
      if(key == 'w'){
-       moveForward = true;
+       bob.accelerate(0.5);;
      }
      if(key == 's'){
-       moveBackward = true;
+       bob.accelerate(-0.5);
      }
-    }
-
-public void keyReleased(){
-    if(key == 'd'){
-      turnRight = false;
-    }
-    if(key == 'a'){
-      turnLeft = false;
-    }
-    if(key == 'w'){
-      moveForward = false;
-    }
-    if(key == 's'){
-      moveBackward = false;
-    }
-  }
+   }
