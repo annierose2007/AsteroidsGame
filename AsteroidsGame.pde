@@ -23,9 +23,6 @@ public void draw(){
   for(int i = 0; i < armstrong.size(); i++){
     armstrong.get(i).move();
     armstrong.get(i).show();
-    double distance = dist((float)bob.getCenterX(), (float)bob.getCenterY(), (float)armstrong.get(i).getCenterX(), (float)armstrong.get(i).getCenterY());
-    if(distance<23) {
-      armstrong.remove(i);
     }
   }
   if(turnRight == true){
