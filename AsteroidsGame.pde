@@ -1,11 +1,9 @@
-Star[] nightSky = new Star[500];
-Spaceship bob = new Spaceship();
-ArrayList <Asteroid> armstrong;
+private Star[] nightSky = new Star[500];
+private Spaceship bob = new Spaceship();
+private ArrayList <Asteroid> armstrong = new ArrayList<Asteroid>();;
 boolean turnLeft, turnRight, moveForward, moveBackward;
-public void setup() 
-{
+public void setup(){
   size(750,750);
-  armstrong = new ArrayList <Asteroid>();
   for(int i = 0; i < nightSky.length; i++){
     nightSky[i] = new Star();
   }
@@ -24,7 +22,19 @@ public void draw(){
     armstrong.get(i).move();
     armstrong.get(i).show();
     }
+   for (int i = 0; i< armstrong.size(); i++) {
+    float d = dist((float)bob.getX(), (float)bob.getY(), (float)armstrong.get(i).getX(), (float)armstrong.get(i).getY());
+    if (d<30){
+      armstrong.remove(i);
+      i--;
+    }
   }
+  if (armstrong.size() == 0) {
+    for (int i = 0; i < 15; i++){
+      armstrong.add(new Asteroid());
+    }
+   }
+}
  
 public void keyPressed(){
      if(key == 'h'){
