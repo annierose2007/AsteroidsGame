@@ -1,5 +1,6 @@
-class Spaceship extends Floater{
-  public Spaceship(){
+class SpaceShip extends Floater  
+{   
+    public SpaceShip(){
           corners = 23;
           xCorners = new int[corners];
           yCorners = new int[corners];
@@ -49,33 +50,32 @@ class Spaceship extends Floater{
           yCorners[21] = -6*2;
           xCorners[22] = 2*2;
           yCorners[22] = -6*2;
-      myColor = myStrokeColor= color(250,250,250);
-      myCenterX = 375;
-      myCenterY = 375;
-      myXspeed = 0;
-      myYspeed = 0;
-      myPointDirection = 0;
-  }
-  public void hyperspace(){
-    myXspeed = 0;
-    myYspeed = 0;
-    myCenterX = (int)(Math.random()*750)+1;
-    myCenterY = (int)(Math.random()*750)+1;
-    myPointDirection = Math.random()*360;
-  }
-  public double getX(){
-    return myCenterX;
-  }
-  public double getY(){
-    return myCenterY;
-  }
-  public double getXspeed(){
-    return myXspeed;
-  }
-  public double getYspeed(){
-    return myYspeed;
-  }
-  public double getPointDirection(){
-    return myPointDirection;
-  }
+          myCenterX = 300;
+          myCenterY = 300;
+          myDirectionX = 0;
+          myDirectionY = 0;
+          myPointDirection = 270;
+          myColor = color(255,0,0);
+
+    }
+
+    public void setX(int x){myCenterX = x;}
+    public int  getX(){return (int)myCenterX;}
+    public void setY(int y){myCenterY = y;}
+    public int  getY(){return (int)myCenterY;}
+    public void setDirectionX(double x){myDirectionX = x;}
+    public double getDirectionX(){return (double)myDirectionX;}
+    public void setDirectionY(double y){myDirectionY = y;}
+    public double getDirectionY(){return (double)myDirectionY;}
+    public void setPointDirection(int degrees){myPointDirection = degrees;}   
+    public double getPointDirection(){return (double)myPointDirection;} 
+
+    public void hyperspace()
+{
+  setDirectionX(0);
+  setDirectionY(0);
+  setX((int)(Math.random()*600)+1);
+  setY((int)(Math.random()*600)+1);
+  setPointDirection((int)(Math.random()*360));
+}
 }
